@@ -36,5 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README LICENSE
+%dir %{_libdir}/openisp
 %{_libdir}/openisp/libtemplate.a
+%dir %{_includedir}/openisp
 %{_includedir}/openisp/template.h
