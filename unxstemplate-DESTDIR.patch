@@ -1,0 +1,27 @@
+diff -ur unxstemplate-1.0/makefile unxstemplate-1.0.new/makefile
+--- unxstemplate-1.0/makefile	2009-05-09 15:48:04.000000000 +0200
++++ unxstemplate-1.0.new/makefile	2009-06-12 15:18:32.719580874 +0200
+@@ -11,7 +11,8 @@
+ 
+ CFLAGS= -Wall -DLinux
+ LIBS= -lmysqlclient.a -lz -lssl
+-
++libdir = @libdir@
++includedir = @includedir@
+ 
+ 
+ all: libtemplate.a
+@@ -26,8 +27,8 @@
+ 	rm -f *.o *.a
+ 
+ install: libtemplate.a template.h
+-	mkdir -p /usr/lib/openisp
+-	mkdir -p /usr/include/openisp
+-	install libtemplate.a /usr/lib/openisp/libtemplate.a
+-	install template.h /usr/include/openisp/template.h
++	mkdir -p $(DESTDIR)$(libdir)/openisp
++	mkdir -p $(DESTDIR)$(includedir)/openisp
++	install libtemplate.a $(DESTDIR)$(libdir)/openisp/libtemplate.a
++	install template.h $(DESTDIR)$(includedir)/openisp/template.h
+ 	rm libtemplate.a
+Tylko w unxstemplate-1.0.new/: makefile~
