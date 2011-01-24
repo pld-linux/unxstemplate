@@ -6,8 +6,10 @@ License:	LGPL
 Group:		Libraries
 Source0:	http://unixservice.com/source/libs/%{name}-%{version}.tar.gz
 # Source0-md5:	d29b0cbd6601197a99b04b216f78aedf
-URL:		http://unixservice.com/unxstemplate
 Patch0:		%{name}-DESTDIR.patch
+URL:		http://unixservice.com/unxstemplate
+BuildRequires:	mysql-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A library used by many unxsVZ C cgi programs for file and stream
