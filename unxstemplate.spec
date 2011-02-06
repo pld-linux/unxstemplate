@@ -34,6 +34,7 @@ rm -rf $RPM_BUILD_ROOT
 	libdir=%{_libdir} \
 	includedir=%{_includedir}
 %clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
